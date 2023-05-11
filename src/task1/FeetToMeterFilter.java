@@ -35,7 +35,7 @@ public class FeetToMeterFilter extends MeasurementFramework {
                 Measurement measurement = readMeasurementIn();
 
                 if (measurement.getId() == this.id) {
-                    double feet = measurement.getMeasurementAsDouble();
+                    double feet = measurement.getMeasurementDouble();
                     double meters = feet / 3.2808;
                     measurement.setMeasurement(Double.doubleToLongBits(meters));
                 }
