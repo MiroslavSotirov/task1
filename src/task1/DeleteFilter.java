@@ -13,7 +13,7 @@ package task1;
  * ****************************************************************************************************************
  */
 
-public class DeleteFilter extends MeasurementFilterFramework {
+public class DeleteFilter extends MeasurementFramework {
     private final int id;
 
     /**
@@ -37,10 +37,10 @@ public class DeleteFilter extends MeasurementFilterFramework {
 
         while (true) {
             try {
-                Measurement measurement = readMeasurementFromInput();
+                Measurement measurement = readMeasurementIn();
 
                 if (measurement.getId() != this.id) {
-                    writeMeasurementToOutput(measurement);
+                    writeMeasurementOut(measurement);
                 }
             } catch (EndOfStreamException e) {
                 ClosePorts();

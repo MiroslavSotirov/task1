@@ -12,7 +12,7 @@ package task1;
  * ****************************************************************************************************************
  */
 
-public class FahrenheitToCelsiusFilter extends MeasurementFilterFramework {
+public class FahrenheitToCelsiusFilter extends MeasurementFramework {
     private final int id;
 
     /**
@@ -33,7 +33,7 @@ public class FahrenheitToCelsiusFilter extends MeasurementFilterFramework {
 
         while (true) {
             try {
-                Measurement measurement = readMeasurementFromInput();
+                Measurement measurement = readMeasurementIn();
 
                 if (measurement.getId() == this.id) {
                     double fahrenheit = measurement.getMeasurementAsDouble();
@@ -41,7 +41,7 @@ public class FahrenheitToCelsiusFilter extends MeasurementFilterFramework {
                     measurement.setMeasurement(Double.doubleToLongBits(celsius));
                 }
 
-                writeMeasurementToOutput(measurement);
+                writeMeasurementOut(measurement);
             } catch (EndOfStreamException e) {
                 ClosePorts();
                 System.out.print("\n" + this.getName() + "::FahrenheitToCelcius Exiting;");

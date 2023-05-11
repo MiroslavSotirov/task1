@@ -13,7 +13,7 @@ import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class SourceFilter extends MeasurementFilterFramework {
+public class SourceFilter extends MeasurementFramework {
 	
 	private final String fileName;
 	
@@ -27,7 +27,7 @@ public class SourceFilter extends MeasurementFilterFramework {
         int bytesread = 0;                    // Number of bytes read from the input file.
         int byteswritten = 0;                // Number of bytes written to the stream.
         DataInputStream in = null;            // File stream reference.
-        byte databyte;                    // The byte of data read from the file
+        byte data;                    // The byte of data read from the file
 
         try {
             /***********************************************************************************
@@ -43,9 +43,9 @@ public class SourceFilter extends MeasurementFilterFramework {
              ***********************************************************************************/
 
             while (true) {
-                databyte = in.readByte();
+                data = in.readByte();
                 bytesread++;
-                WriteFilterOutputPort(databyte);
+                WriteFilterOutputPort(data);
                 byteswritten++;
 
             } // while

@@ -12,7 +12,7 @@ package task1;
  * ****************************************************************************************************************
  */
 
-public class FeetToMeterFilter extends MeasurementFilterFramework {
+public class FeetToMeterFilter extends MeasurementFramework {
     private final int id;
 
     /**
@@ -32,7 +32,7 @@ public class FeetToMeterFilter extends MeasurementFilterFramework {
 
         while (true) {
             try {
-                Measurement measurement = readMeasurementFromInput();
+                Measurement measurement = readMeasurementIn();
 
                 if (measurement.getId() == this.id) {
                     double feet = measurement.getMeasurementAsDouble();
@@ -40,7 +40,7 @@ public class FeetToMeterFilter extends MeasurementFilterFramework {
                     measurement.setMeasurement(Double.doubleToLongBits(meters));
                 }
 
-                writeMeasurementToOutput(measurement);
+                writeMeasurementOut(measurement);
             } catch (EndOfStreamException e) {
                 ClosePorts();
                 System.out.print("\n" + this.getName() + "::FeetToMeter Exiting;");
