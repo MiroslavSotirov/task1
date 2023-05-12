@@ -20,7 +20,7 @@ public class RemoveFilter extends MeasurementFramework {
                 }
             } catch (EndOfStreamException e) {
                 ClosePorts();
-                System.out.print("\n" + this.getName() + "::Remove Exiting;");
+                System.out.print("\n" + this.getName() + "::RemoveFilter Exiting;");
                 break;
             }
         }

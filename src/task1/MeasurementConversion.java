@@ -23,7 +23,7 @@ public class MeasurementConversion extends MeasurementFramework {
                 writeMeasurementOut(measurement);
             } catch (EndOfStreamException e) {
                 ClosePorts();
-                System.out.print("\n" + this.getName() + "::FeetToMeter Exiting;");
+                System.out.print("\n" + this.getName() + "::MeasurementConversion Exiting;");
                 break;
             }
         }
