@@ -1,33 +1,13 @@
 package task1;
 
-/**
- * ***************************************************************************************************************
- * File:FeetToMeterFilter.java
- * <p/>
- * Description:
- * <p/>
- * Converts the Measurement with the given Id from feet to meters.
- * The conversion rate we use is: 3.2808 Feet to 1 Meter
- * <p/>
- * ****************************************************************************************************************
- */
-
-public class FeetToMeterFilter extends MeasurementFramework {
+public class MeasurementConversion extends MeasurementFramework {
     private final int id;
 
-    /**
-     * Instantiates a new FeetToMeterFilter object.
-     *
-     * @param id to remove
-     */
-    public FeetToMeterFilter(int id) {
+    public MeasurementConversion(int id) {
         super();
         this.id = id;
     }
 
-    /**
-     * Converts the Measurement with the given Id from feet to meters.
-     */
     public void run() {
 
         while (true) {

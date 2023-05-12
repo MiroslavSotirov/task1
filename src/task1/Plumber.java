@@ -15,27 +15,27 @@ public class Plumber {
 
         // instantiate three filters.
         SourceFilter sourceFilter = new SourceFilter("FlightData.dat");
-        RemoveFilter deleteFilter1 = new RemoveFilter(1);
-        RemoveFilter deleteFilter3 = new RemoveFilter(3);
-        RemoveFilter deleteFilter5 = new RemoveFilter(5);
-        FeetToMeterFilter feetToMeterFilter = new FeetToMeterFilter(2);
+        RemoveFilter removeFilter1 = new RemoveFilter(1);
+        RemoveFilter removeFilter3 = new RemoveFilter(3);
+        RemoveFilter removeFilter5 = new RemoveFilter(5);
+        MeasurementConversion measurementConversion = new MeasurementConversion(2);
         TemperatureConversion temperatureConversion = new TemperatureConversion(4);
         SinkFilter sinkFilter = new SinkFilter(new int[]{0, 4, 2}, "OutputA.dat");
 
         // connect the filters to each other
         sinkFilter.Connect(temperatureConversion);
-        temperatureConversion.Connect(feetToMeterFilter);
-        feetToMeterFilter.Connect(deleteFilter5);
-        deleteFilter5.Connect(deleteFilter3);
-        deleteFilter3.Connect(deleteFilter1);
-        deleteFilter1.Connect(sourceFilter);
+        temperatureConversion.Connect(measurementConversion);
+        measurementConversion.Connect(removeFilter5);
+        removeFilter5.Connect(removeFilter3);
+        removeFilter3.Connect(removeFilter1);
+        removeFilter1.Connect(sourceFilter);
 
         // start the filters
         sourceFilter.start();
-        deleteFilter1.start();
-        deleteFilter3.start();
-        deleteFilter5.start();
-        feetToMeterFilter.start();
+        removeFilter1.start();
+        removeFilter3.start();
+        removeFilter5.start();
+        measurementConversion.start();
         temperatureConversion.start();
         sinkFilter.start();
 
