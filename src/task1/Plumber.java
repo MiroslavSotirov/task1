@@ -15,9 +15,9 @@ public class Plumber {
 
         // instantiate three filters.
         SourceFilter sourceFilter = new SourceFilter("FlightData.dat");
-        DeleteFilter deleteFilter1 = new DeleteFilter(1);
-        DeleteFilter deleteFilter3 = new DeleteFilter(3);
-        DeleteFilter deleteFilter5 = new DeleteFilter(5);
+        RemoveFilter deleteFilter1 = new RemoveFilter(1);
+        RemoveFilter deleteFilter3 = new RemoveFilter(3);
+        RemoveFilter deleteFilter5 = new RemoveFilter(5);
         FeetToMeterFilter feetToMeterFilter = new FeetToMeterFilter(2);
         FahrenheitToCelsiusFilter fahrenheitToCelsiusFilter = new FahrenheitToCelsiusFilter(4);
         SinkFilter sinkFilter = new SinkFilter(new int[]{0, 4, 2}, "OutputA.dat");
