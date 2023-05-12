@@ -19,12 +19,12 @@ public class Plumber {
         RemoveFilter deleteFilter3 = new RemoveFilter(3);
         RemoveFilter deleteFilter5 = new RemoveFilter(5);
         FeetToMeterFilter feetToMeterFilter = new FeetToMeterFilter(2);
-        FahrenheitToCelsiusFilter fahrenheitToCelsiusFilter = new FahrenheitToCelsiusFilter(4);
+        TemperatureConversion temperatureConversion = new TemperatureConversion(4);
         SinkFilter sinkFilter = new SinkFilter(new int[]{0, 4, 2}, "OutputA.dat");
 
         // connect the filters to each other
-        sinkFilter.Connect(fahrenheitToCelsiusFilter);
-        fahrenheitToCelsiusFilter.Connect(feetToMeterFilter);
+        sinkFilter.Connect(temperatureConversion);
+        temperatureConversion.Connect(feetToMeterFilter);
         feetToMeterFilter.Connect(deleteFilter5);
         deleteFilter5.Connect(deleteFilter3);
         deleteFilter3.Connect(deleteFilter1);
@@ -36,7 +36,7 @@ public class Plumber {
         deleteFilter3.start();
         deleteFilter5.start();
         feetToMeterFilter.start();
-        fahrenheitToCelsiusFilter.start();
+        temperatureConversion.start();
         sinkFilter.start();
 
     }
